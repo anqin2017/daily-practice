@@ -51,7 +51,7 @@ void FunctionBubbleSort(vector<int>& vec)
 }
 
 //øÏ≈≈
-int OnceSort(vector<int>& vec, int first, int end)
+int QuickSort(vector<int>& vec, int first, int end)
 {
 	if (vec.size() == 0)
 	{
@@ -82,19 +82,20 @@ int OnceSort(vector<int>& vec, int first, int end)
 			vec[j] = temp;
 		}
 	}
-	return i;
+	QuickSort(vec, first, i - 1);
+	QuickSort(vec, i + 1, end);
 }
 
-void QuickSort(vector<int>& vec, int first, int end)
-{
-	int povot = OnceSort(vec, first, end);
-	QuickSort(vec, first, povot - 1);
-	QuickSort(vec, povot + 1, end);
-}
+//void QuickSort(vector<int>& vec, int first, int end)
+//{
+//	int povot = OnceSort(vec, first, end);
+//	QuickSort(vec, first, povot - 1);
+//	QuickSort(vec, povot + 1, end);
+//}
 
 
 
-int main()
+int main030()
 {
 	vector<int> vec_;
 	srand((unsigned)time(NULL));
